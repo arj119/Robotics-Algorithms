@@ -31,6 +31,7 @@ function IsWithinBeam(cellX, cellY, z, angle, halfWidth) then
     dotProduct = cellX * beamX + cellY * beamY
     cellD = math.sqrt(cellX ^ 2 + cellY ^ 2)
     
+    -- cosine distance
     angleToBeam = math.acos(dotProduct / (cellD * z))
     return angleToBeam <= halfWidth
 end
