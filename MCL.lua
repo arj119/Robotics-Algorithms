@@ -52,7 +52,6 @@ end
 
 function CalculateLikelihood(x, y, theta, z)
     minMValue = math.huge
-    wallIndex = -1
     for i=1, #walls do 
         Ax, Ay, Bx, By = walls[i][1], walls[i][2], walls[i][3], walls[i][4]
         -- replace with other m calculation where necessary
@@ -67,7 +66,6 @@ function CalculateLikelihood(x, y, theta, z)
             if (distanceAtoPoint + distancePointtoB == fullLineDistance) then
                 if (m < minMValue) then
                     minMValue = m
-                    wallIndex = i
                 end
             end
         end
